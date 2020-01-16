@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List{% endblock %}
+
+{% block body %}
+    <table>
+        {% for post in posts %}
+            <tr style="outline: thin solid">
+                <td>{{ post.title }}<td>
+                <td>{{ post.body }}<td>
+                <td>{{ post.name }}<td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
