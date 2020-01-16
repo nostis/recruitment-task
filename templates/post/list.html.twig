@@ -9,7 +9,14 @@
                 <td>{{ post.title }}<td>
                 <td>{{ post.body }}<td>
                 <td>{{ post.name }}<td>
-            </tr>
+                <td>
+                    <form method="POST" action="{{ path('delete', { 'postId': post.id }) }}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+             </tr>
         {% endfor %}
     </table>
+</form>
 {% endblock %}

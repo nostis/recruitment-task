@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PostController extends AbstractController
@@ -15,7 +17,7 @@ class PostController extends AbstractController
         $this->postRepository = $postRepository;
     }
     /**
-     * @Route("/lista", name="post")
+     * @Route("/lista", name="post", methods={"GET"})
      */
     public function list()
     {
@@ -26,8 +28,15 @@ class PostController extends AbstractController
         ]);
     }
 
-    public function delete()
+    /**
+     * @Route("/lista/{postId}", name="delete", methods={"DELETE"})
+     */
+    public function delete($postId)
     {
+        $post = $this->postRepository->find($postId);
 
+        $this->postRepository->delete($post);
+
+        return new Response('Successfully deleted post');
     }
 }

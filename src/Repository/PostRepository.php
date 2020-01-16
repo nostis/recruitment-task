@@ -30,4 +30,12 @@ class PostRepository extends ServiceEntityRepository
         $entityManager->persist($post);
         $entityManager->flush();
     }
+
+    public function delete(Post $post)
+    {
+        $entityManager = $this->managerRegistry->getManagerForClass(Post::class);
+
+        $entityManager->remove($post);
+        $entityManager->flush();
+    }
 }
