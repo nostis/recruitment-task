@@ -19,12 +19,7 @@ class FetchPostsCommand extends Command
 
         parent::__construct();
     }
-
-    protected function configure()
-    {
-        //parent::configure();
-    }
-
+    
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $client = HttpClient::create();
