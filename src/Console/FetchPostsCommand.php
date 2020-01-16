@@ -46,6 +46,8 @@ class FetchPostsCommand extends Command
             $this->postRepository->save($postToSave);
         }
 
+        $output->writeln('Successfully fetched posts');
+
         return 0;
     }
 }
