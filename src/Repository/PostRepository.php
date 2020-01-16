@@ -25,7 +25,7 @@ class PostRepository extends ServiceEntityRepository
 
     public function save(Post $post)
     {
-        $entityManager = $this->managerRegistry->getManagerForClass(get_class($post));
+        $entityManager = $this->managerRegistry->getManagerForClass(Post::class);
 
         $entityManager->persist($post);
         $entityManager->flush();
