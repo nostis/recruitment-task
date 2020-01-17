@@ -5,4 +5,4 @@ console command:
 
 endpoints:
  * /lista - list of posts
- * /api/posts or /api/posts/id - list of posts by rest, secured with credentials; (admin, password)
+ * /api/posts or /api/posts/id - list of posts (api platform), secured with credentials; (admin, password)
